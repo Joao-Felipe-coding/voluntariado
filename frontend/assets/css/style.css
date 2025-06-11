@@ -58,6 +58,13 @@ header {
   margin: 0;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
 .nav-links {
   display: flex;
 }
