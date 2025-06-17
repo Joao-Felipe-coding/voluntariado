@@ -35,3 +35,250 @@
     font-size: 1.2rem;
   }
 }
+
+/* ============= RESPONSIVIDADE ADICIONAL ============= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cadastro-form {
+    padding: 30px;
+  }
+
+  .necessidades-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about {
+    padding: 60px 0;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-card {
+    padding: 30px 20px;
+  }
+
+  .stats {
+    padding: 40px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .form-section {
+    padding: 40px 0;
+  }
+
+  .form-header h2 {
+    font-size: 2rem;
+  }
+
+  .cadastro-form {
+    padding: 25px 20px;
+    margin: 0 15px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  .necessidades-section {
+    padding: 40px 0;
+  }
+
+  .necessidades-header h2 {
+    font-size: 2rem;
+  }
+
+  .filtros-container {
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-pesquisa {
+    min-width: auto;
+  }
+
+  .filtro-tipo select {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .resultados-info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .necessidades-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .necessidade-card {
+    padding: 20px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+
+  .modal-header {
+    padding: 20px 20px 15px;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .modal-footer {
+    padding: 15px 20px 20px;
+    flex-direction: column;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+  }
+
+  .contato-info {
+    gap: 12px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .toast-notification {
+    right: 15px;
+    left: 15px;
+    max-width: none;
+    transform: translateY(-100px);
+  }
+
+  .toast-notification.show {
+    transform: translateY(0);
+  }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .about h2, .necessidades-header h2, .form-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .cadastro-form {
+    padding: 20px 15px;
+  }
+
+  .form-section-group h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-titulo {
+    font-size: 1.2rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
