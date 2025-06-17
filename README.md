@@ -151,48 +151,16 @@ limparTodosDados();
 
 ## 📱 Compatibilidade
 
-### Navegadores Suportados
-- ✅ Chrome 60+
-- ✅ Firefox 55+
-- ✅ Safari 12+
-- ✅ Edge 79+
-
 ### Dispositivos
 - 💻 **Desktop**: 1200px+
 - 📱 **Tablet**: 768px - 1199px
 - 📱 **Mobile**: 320px - 767px
 
-## 🤝 Como Contribuir
-
-1. **Fork** este repositório
-2. **Clone** seu fork localmente
-3. **Crie** uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-4. **Commit** suas mudanças (`git commit -m 'feat: Add some AmazingFeature'`)
-5. **Push** para a branch (`git push origin feature/AmazingFeature`)
-6. **Abra** um Pull Request
-
-### Padrão de Commits
-Seguimos a convenção de commits semânticos:
-- `feat:` Nova funcionalidade
-- `fix:` Correção de bug
-- `style:` Mudanças de estilo/CSS
-- `refactor:` Refatoração de código
-- `docs:` Documentação
-- `test:` Testes
-
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👥 Desenvolvedores
-
-- **Desenvolvimento**: Plataforma criada com foco em boas práticas e experiência do usuário
-- **Design**: Interface moderna e acessível
-- **Responsividade**: Compatível com todos os dispositivos
-
 ## 🌟 Demonstração
-
-### Screenshots
 
 #### 🏠 Página Inicial
 - Hero section atrativo com call-to-actions
@@ -208,22 +176,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 - Cards informativos e interativos
 - Sistema de filtros avançado
 - Modal com detalhes completos
-
-## 🚀 Próximas Funcionalidades
-
-- [ ] Sistema de notificações
-- [ ] Integração com redes sociais
-- [ ] Sistema de avaliações
-- [ ] Chat entre voluntários e ONGs
-- [ ] Mapa de localização
-- [ ] Dashboard administrativo
-
-## 📞 Suporte
-
-Para dúvidas, sugestões ou reportar problemas:
-- 📧 Email: contato@voluntariado.com
-- 🐛 Issues: [GitHub Issues](https://github.com/seu-usuario/voluntariado/issues)
-
----
-
-**🤝 Juntos podemos transformar nossa comunidade através do voluntariado!**
