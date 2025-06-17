@@ -26,13 +26,73 @@
       </ul>
     </nav>
   </header>
-
   <main>
-    <!-- Conteúdo da página de necessidades aqui -->
-    <div class="container">
-      <h2>Necessidades de Voluntariado</h2>
-      <!-- Lista de necessidades será adicionada aqui -->
-    </div>
+    <!-- Página de Visualização de Necessidades -->
+    <section class="necessidades-section">
+      <div class="container">
+        <div class="necessidades-header">
+          <h2>Necessidades de Voluntariado</h2>
+          <p>Encontre oportunidades para fazer a diferença na sua comunidade</p>
+        </div>
+
+        <!-- Filtros e Pesquisa -->
+        <div class="filtros-container">
+          <div class="filtro-pesquisa">
+            <div class="search-group">
+              <i class="fas fa-search"></i>
+              <input type="text" id="pesquisa" placeholder="Pesquisar por título ou descrição...">
+            </div>
+          </div>
+          
+          <div class="filtro-tipo">
+            <select id="filtroTipo">
+              <option value="">Todos os tipos</option>
+              <option value="educacao">Educação</option>
+              <option value="saude">Saúde</option>
+              <option value="meio-ambiente">Meio Ambiente</option>
+              <option value="doacao-alimentos">Doação de Alimentos</option>
+              <option value="doacao-roupas">Doação de Roupas</option>
+              <option value="idosos">Cuidado com Idosos</option>
+              <option value="criancas">Cuidado com Crianças</option>
+              <option value="animais">Proteção Animal</option>
+              <option value="outros">Outros</option>
+            </select>
+          </div>
+
+          <button class="btn btn-secondary" onclick="limparFiltros()">
+            <i class="fas fa-eraser"></i> Limpar Filtros
+          </button>
+        </div>
+
+        <!-- Contador de Resultados -->
+        <div class="resultados-info">
+          <span id="contadorResultados">0 necessidades encontradas</span>
+        </div>
+
+        <!-- Lista de Necessidades -->
+        <div class="necessidades-grid" id="necessidadesGrid">
+          <!-- Necessidades serão carregadas dinamicamente aqui -->
+        </div>
+
+        <!-- Mensagem quando não há necessidades -->
+        <div class="no-results" id="noResults" style="display: none;">
+          <div class="no-results-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Nenhuma necessidade encontrada</h3>
+          <p>Tente ajustar os filtros ou pesquise por outros termos.</p>
+          <a href="cadastro.html" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Cadastrar Nova Necessidade
+          </a>
+        </div>
+
+        <!-- Mensagem de carregamento -->
+        <div class="loading" id="loading">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Carregando necessidades...</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="./frontend/assets/js/main.js"></script>
