@@ -64,11 +64,10 @@ function carregarNecessidades() {
         // Carrega do localStorage
         const necessidadesString = localStorage.getItem('necessidades');
         necessidadesOriginais = necessidadesString ? JSON.parse(necessidadesString) : [];
-        
-        // Simula delay de carregamento para melhor UX
+          // Simula delay de carregamento para melhor UX
         setTimeout(() => {
-            // Filtra apenas necessidades ativas
-            necessidadesOriginais = necessidadesOriginais.filter(n => n.status === 'ativo');
+            // Filtra apenas necessidades ativas (se existir o campo status)
+            necessidadesOriginais = necessidadesOriginais.filter(n => !n.status || n.status === 'ativo');
             
             // Ordena por data (mais recentes primeiro)
             ordenarNecessidades('data-desc');
@@ -181,7 +180,7 @@ function criarCardNecessidade(necessidade) {
             <p class="card-descricao">${escapeHtml(descricaoTruncada)}</p>
             <div class="card-localizacao">
                 <i class="fas fa-map-marker-alt"></i>
-                ${necessidade.cidade ? `${necessidade.cidade}, ${necessidade.estado}` : 'Localização não informada'}
+                ${(necessidade.endereco?.cidade || necessidade.cidade) ? `${necessidade.endereco?.cidade || necessidade.cidade}, ${necessidade.endereco?.estado || necessidade.estado}` : 'Localização não informada'}
             </div>
         </div>
         
@@ -234,7 +233,7 @@ function criarModalDetalhes(necessidade) {
     modal.id = 'modalDetalhes';
     modal.className = 'modal';
     
-    const endereco = `${necessidade.rua}${necessidade.numero ? ', ' + necessidade.numero : ''}, ${necessidade.bairro}, ${necessidade.cidade} - ${necessidade.estado}`;
+    const endereco = `${necessidade.endereco?.rua || necessidade.rua}${(necessidade.endereco?.numero || necessidade.numero) ? ', ' + (necessidade.endereco?.numero || necessidade.numero) : ''}, ${necessidade.endereco?.bairro || necessidade.bairro}, ${necessidade.endereco?.cidade || necessidade.cidade} - ${necessidade.endereco?.estado || necessidade.estado}`;
     
     modal.innerHTML = `
         <div class="modal-content">
@@ -278,16 +277,14 @@ function criarModalDetalhes(necessidade) {
                     <h4><i class="fas fa-phone"></i> Informações de Contato</h4>
                     <div class="contato-info">
                         <div class="contato-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:${necessidade.contato}?subject=Interesse em: ${encodeURIComponent(necessidade.titulo)}&body=Olá, tenho interesse em ajudar com esta necessidade.">
-                                ${necessidade.contato}
+                            <i class="fas fa-envelope"></i>                            <a href="mailto:${necessidade.contato?.email || necessidade.contato}?subject=Interesse em: ${encodeURIComponent(necessidade.titulo)}&body=Olá, tenho interesse em ajudar com esta necessidade.">
+                                ${necessidade.contato?.email || necessidade.contato}
                             </a>
-                        </div>
-                        ${necessidade.telefone ? `
+                        </div>                        ${(necessidade.contato?.telefone || necessidade.telefone) ? `
                             <div class="contato-item">
                                 <i class="fas fa-phone"></i>
-                                <a href="tel:${necessidade.telefone.replace(/\D/g, '')}">
-                                    ${necessidade.telefone}
+                                <a href="tel:${(necessidade.contato?.telefone || necessidade.telefone).replace(/\D/g, '')}">
+                                    ${necessidade.contato?.telefone || necessidade.telefone}
                                 </a>
                             </div>
                         ` : ''}
@@ -356,7 +353,7 @@ Gostaria de saber mais detalhes sobre como posso contribuir.
 
 Atenciosamente.`;
     
-    const mailtoLink = `mailto:${necessidade.contato}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    const mailtoLink = `mailto:${necessidade.contato?.email || necessidade.contato}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
     window.open(mailtoLink);
 }
 
