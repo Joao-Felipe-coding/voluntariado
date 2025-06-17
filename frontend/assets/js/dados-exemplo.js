@@ -23,7 +23,7 @@ const necessidadesExemplo = [
             email: 'contato@ongesperanca.org.br',
             telefone: '(11) 99999-1111'
         },
-        dataCadastro: '15/06/2025'
+        dataCadastro: '06/15/2025'
     },
     {
         id: 'exemplo-002',
@@ -43,7 +43,7 @@ const necessidadesExemplo = [
             email: 'meio.ambiente@institutoverde.org',
             telefone: '(11) 98888-2222'
         },
-        dataCadastro: '14/06/2025'
+        dataCadastro: '06/14/2025'
     },
     {
         id: 'exemplo-003',
@@ -63,7 +63,7 @@ const necessidadesExemplo = [
             email: 'voluntarios@acaosolidaria.com.br',
             telefone: '(11) 97777-3333'
         },
-        dataCadastro: '13/06/2025'
+        dataCadastro: '06/13/2025'
     },
     {
         id: 'exemplo-004',
@@ -83,7 +83,7 @@ const necessidadesExemplo = [
             email: 'saude@saudeparatodos.org.br',
             telefone: '(11) 96666-4444'
         },
-        dataCadastro: '12/06/2025'
+        dataCadastro: '06/12/2025'
     },
     {
         id: 'exemplo-005',
@@ -103,7 +103,7 @@ const necessidadesExemplo = [
             email: 'voluntarios@casadoidoso.org.br',
             telefone: '(11) 95555-5555'
         },
-        dataCadastro: '11/06/2025'
+        dataCadastro: '06/11/2025'
     },
     {
         id: 'exemplo-006',
@@ -123,7 +123,7 @@ const necessidadesExemplo = [
             email: 'oficinas@arteeculturapopular.org',
             telefone: '(11) 94444-6666'
         },
-        dataCadastro: '10/06/2025'
+        dataCadastro: '06/10/2025'
     }
 ];
 
