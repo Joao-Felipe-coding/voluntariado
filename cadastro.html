@@ -26,13 +26,128 @@
       </ul>
     </nav>
   </header>
-
   <main>
-    <!-- Conteúdo da página de cadastro aqui -->
-    <div class="container">
-      <h2>Página de Cadastro</h2>
-      <!-- Formulário de cadastro será adicionado aqui -->
-    </div>
+    <!-- Formulário de Cadastro de Necessidades -->
+    <section class="form-section">
+      <div class="container">
+        <div class="form-header">
+          <h2>Cadastrar Nova Necessidade</h2>
+          <p>Preencha o formulário abaixo para cadastrar uma nova necessidade de voluntariado ou doação.</p>
+        </div>
+        
+        <form id="cadastroForm" class="necessidade-form">
+          <!-- Informações da Instituição -->
+          <div class="form-group">
+            <label for="nomeInstituicao">Nome da Instituição *</label>
+            <input type="text" id="nomeInstituicao" name="nomeInstituicao" required>
+            <div class="error-message" id="errorNomeInstituicao"></div>
+          </div>
+
+          <!-- Tipo de Ajuda -->
+          <div class="form-group">
+            <label for="tipoAjuda">Tipo de Ajuda *</label>
+            <select id="tipoAjuda" name="tipoAjuda" required>
+              <option value="">Selecione o tipo de ajuda</option>
+              <option value="educacao">Educação</option>
+              <option value="saude">Saúde</option>
+              <option value="meio-ambiente">Meio Ambiente</option>
+              <option value="doacao-alimentos">Doação de Alimentos</option>
+              <option value="doacao-roupas">Doação de Roupas</option>
+              <option value="idosos">Cuidado com Idosos</option>
+              <option value="criancas">Cuidado com Crianças</option>
+              <option value="animais">Proteção Animal</option>
+              <option value="outros">Outros</option>
+            </select>
+            <div class="error-message" id="errorTipoAjuda"></div>
+          </div>
+
+          <!-- Título da Necessidade -->
+          <div class="form-group">
+            <label for="titulo">Título da Necessidade *</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ex: Ajuda com reforço escolar" required>
+            <div class="error-message" id="errorTitulo"></div>
+          </div>
+
+          <!-- Descrição Detalhada -->
+          <div class="form-group">
+            <label for="descricao">Descrição Detalhada *</label>
+            <textarea id="descricao" name="descricao" rows="4" 
+                      placeholder="Descreva detalhadamente a necessidade, o que é esperado do voluntário, horários, etc." required></textarea>
+            <div class="error-message" id="errorDescricao"></div>
+          </div>
+
+          <!-- Endereço -->
+          <fieldset class="form-fieldset">
+            <legend>Localização</legend>
+            
+            <div class="form-group">
+              <label for="cep">CEP *</label>
+              <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
+              <div class="error-message" id="errorCep"></div>
+              <div class="loading-message" id="loadingCep" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Buscando endereço...
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rua">Rua</label>
+                <input type="text" id="rua" name="rua" readonly>
+              </div>
+              <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" name="bairro" readonly>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" readonly>
+              </div>
+              <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" readonly>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Contato -->
+          <fieldset class="form-fieldset">
+            <legend>Informações de Contato</legend>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="contato@instituicao.com.br" required>
+                <div class="error-message" id="errorEmail"></div>
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+                <div class="error-message" id="errorTelefone"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Botões de Ação -->
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="limparFormulario()">
+              <i class="fas fa-eraser"></i> Limpar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save"></i> Cadastrar Necessidade
+            </button>
+          </div>
+
+          <!-- Mensagem de Sucesso -->
+          <div class="success-message" id="successMessage" style="display: none;">
+            <i class="fas fa-check-circle"></i>
+            <p>Necessidade cadastrada com sucesso!</p>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
   <script src="./frontend/assets/js/main.js"></script>
